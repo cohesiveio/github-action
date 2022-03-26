@@ -1,0 +1,18 @@
+name: 'Cohesive Action'
+description: 'Deploy action'
+
+inputs:
+  root:
+    description: 'Relative path under $GITHUB_WORKSPACE to place the repository'
+    required: false
+  prefix:
+    description: 'Add a prefix to resources'
+    required: false
+  debug:
+    description: 'Enable debugging'
+    required: false
+
+runs:
+  using: docker
+  image: docker://ghcr.io/cohesiveio/action:main
+  entrypoint: cohesive-action
